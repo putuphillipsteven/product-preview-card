@@ -40,8 +40,8 @@ main {
 }
 
 .product-detail {
-  max-width: 50%;
-  max-height: 100%;
+  width: 50%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   padding: 48px;
@@ -95,4 +95,57 @@ main {
 }
 .product-detail button:hover {
   background-color: hsl(212, 21%, 14%);
-}/*# sourceMappingURL=styles.css.map */
+}
+
+@media all and (max-width: 480px) {
+  body {
+    max-width: 375px;
+  }
+  main {
+    flex-direction: column;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  .product-image {
+    width: 100%;
+    height: 40%;
+  }
+  .product-image img {
+    background-image: url("./images/image-product-mobile.jpg");
+    object-fit: cover;
+    width: 100%;
+    height: 320px;
+  }
+
+  .product-detail {
+    width: 100%;
+    height: 60%;
+    padding: 32px;
+  }
+  .product-detail h1 {
+    font-size: 28px;
+  }
+  .product-detail .product-header h4 {
+    font-size: 8px;
+    letter-spacing: 8px;
+  }
+
+  .product-detail .product-explanation p {
+    font-size: 16px;
+  }
+  .product-detail .product-price h4 {
+    font-size: 12px;
+  }
+  .product-detail button {
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 12px;
+  }
+  .product-detail button > img {
+    width: 12px;
+    height: 12px;
+    margin-right: 8px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
