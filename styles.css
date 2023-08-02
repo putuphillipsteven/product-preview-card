@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Monserrat", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
@@ -15,12 +15,11 @@ body {
   width: 100vw;
   overflow: hidden;
 }
-
-main {
+body main {
   background-color: hsl(0, 0%, 100%);
-  width: 550px;
-  height: 350px;
-  border-radius: 32px;
+  height: 400px;
+  width: 600px;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
 }
@@ -29,12 +28,14 @@ main {
   width: 50%;
   height: 100%;
   overflow: hidden;
+  position: relative;
 }
 .product-image img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
   transition: 0.5s ease;
+  position: absolute;
+  top: -10%;
 }
 .product-image img:hover {
   transform: scale(1.2);
@@ -45,23 +46,23 @@ main {
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 24px;
+  padding: 32px;
   justify-content: space-between;
 }
 .product-detail h1 {
   font-family: "Fraunces", sans;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
   line-height: 1;
 }
-.product-detail .product-header h4 {
+.product-detail .product-header h2 {
   letter-spacing: 8px;
   color: hsl(228, 12%, 48%);
   font-weight: lighter;
-  font-size: 10px;
+  font-size: 12px;
 }
 .product-detail .product-explanation p {
-  font-size: 12px;
+  font-size: 14px;
   color: hsl(228, 12%, 48%);
   line-height: 1.5;
   font-weight: 500;
@@ -74,80 +75,63 @@ main {
   color: hsl(158, 36%, 37%);
   margin-right: 16px;
 }
-.product-detail .product-price h4 {
+.product-detail .product-price h2 {
   color: hsl(228, 12%, 48%);
   font-size: 12px;
   text-decoration: line-through;
+  font-family: "Fraunces", serif;
+  font-weight: 700;
 }
 .product-detail button {
   background-color: hsl(158, 36%, 37%);
   color: hsl(0, 0%, 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
   border: none;
   border-radius: 8px;
   width: 100%;
-  padding: 16px;
+  padding: 16px 8px;
   font-weight: 700;
   cursor: pointer;
 }
 .product-detail button img {
-  margin-right: 8px;
-  width: 12px;
-  height: 12px;
+  margin-right: 16px;
+  width: 16px;
+  height: 16px;
 }
 .product-detail button:hover {
-  background-color: hsl(212, 21%, 14%);
+  background-color: hsl(158, 36%, 20%);
 }
 
-@media all and (max-width: 600px) {
+@media all and (max-width: 768px) {
   body {
-    max-width: 375px;
+    padding: 16px;
   }
-  main {
+  body main {
     flex-direction: column;
-    width: 90%;
-    height: 90%;
+    height: 500px;
+    width: 300px;
   }
-  .product-image {
+  body main section.product-image {
     width: 100%;
     height: 40%;
+    background-color: red;
+    position: relative;
+    background-image: url(./images/image-product-mobile.jpg);
+    background-size: cover;
+    background-position: -20%;
   }
-  .product-image img {
-    background-image: url("./images/image-product-mobile.jpg");
-    object-fit: cover;
-    width: 100%;
-    height: 320px;
+  body main section.product-image img {
+    position: absolute;
+    top: -70%;
+    transform: scale(1);
+    display: none;
   }
-
-  .product-detail {
-    width: 100%;
-    height: 60%;
-    padding: 32px;
-  }
-  .product-detail h1 {
-    font-size: 32px;
-  }
-  .product-detail .product-header h4 {
-    font-size: 8px;
-    letter-spacing: 8px;
-  }
-
-  .product-detail .product-explanation p {
-    font-size: 16px;
-  }
-  .product-detail .product-price h4 {
-    font-size: 12px;
-  }
-  .product-detail button {
-    border-radius: 8px;
+  body main section.product-detail {
     padding: 16px;
-    font-size: 12px;
+    height: 60%;
+    width: 100%;
   }
-  .product-detail button > img {
-    width: 12px;
-    height: 12px;
-    margin-right: 8px;
-  }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
