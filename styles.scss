@@ -18,6 +18,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
@@ -28,6 +29,10 @@ body {
     border-radius: 16px;
     overflow: hidden;
     display: flex;
+  }
+  section.attribution {
+    font-size: 12px;
+    margin-top: 16px;
   }
 }
 
@@ -46,7 +51,6 @@ body {
   img:hover {
     transform: scale(1.2);
   }
-  // background-color: red;
 }
 .product-detail {
   width: 50%;
@@ -64,7 +68,7 @@ body {
   }
   .product-header {
     h2 {
-      letter-spacing: 8px;
+      letter-spacing: 4px;
       color: $color-2;
       font-weight: lighter;
       font-size: 12px;
@@ -143,8 +147,6 @@ body {
         padding: 16px;
         height: 60%;
         width: 100%;
-        .product-header {
-        }
       }
     }
   }
